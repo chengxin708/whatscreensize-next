@@ -8,7 +8,7 @@ import { AdjustButton } from '@/components/shared/AdjustButton';
 import { RangeSlider } from '@/components/shared/RangeSlider';
 import { DistanceGuide } from '@/components/tv/DistanceGuide';
 import { TVResultCards } from '@/components/tv/TVResultCards';
-import { TVVotingSection } from '@/components/tv/TVVotingSection';
+
 import { TVProductSection } from '@/components/tv/TVProductSection';
 import type { UnitType } from '@/types/calculator';
 import type { TVProduct, TVProductsBySize } from '@/types/product';
@@ -250,8 +250,6 @@ export default function TVPage() {
             </h3>
 
             <TVResultCards best={result.best} good={result.good} t={t} />
-
-            <TVVotingSection />
           </div>
 
           {/* Product load error */}
