@@ -1,19 +1,27 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import { Sidebar } from '@/components/admin/Sidebar';
 
 export function AdminLayoutClient({ children }: { children: React.ReactNode }) {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const pathname = usePathname();
+
+  const isLoginPage = pathname === '/admin/login';
 
   useEffect(() => {
-    if (status === 'unauthenticated') {
+    if (status === 'unauthenticated' && !isLoginPage) {
       router.push('/admin/login');
     }
-  }, [status, router]);
+  }, [status, router, isLoginPage]);
+
+  // Login page renders without sidebar/auth check
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
 
   if (status === 'loading') {
     return (
