@@ -1,0 +1,51 @@
+export type Language = 'en' | 'zh';
+
+export interface TranslationKeys {
+  navHome: string;
+  navTv: string;
+  navMonitor: string;
+  heroTitlePrefix: string;
+  heroTitleSuffix: string;
+  heroSubtitle: string;
+  cardTvTitle: string;
+  cardTvDesc: string;
+  cardMonitorTitle: string;
+  cardMonitorDesc: string;
+  labelDistance: string;
+  unitImperial: string;
+  unitMetric: string;
+  tvCalcTitle: string;
+  tvResultTitle: string;
+  tvBestLabel: string;
+  tvGoodLabel: string;
+  tvRatioDesc: string;
+  monitorCalcTitle: string;
+  visualAcuity: string;
+  showNotIdeal: string;
+  hideNotIdeal: string;
+  retinaLevel: string;
+  comfortable: string;
+  notRecommended: string;
+  filterAll: string;
+  filterGaming: string;
+  filterProductivity: string;
+  categoryStandard: string;
+  categoryUltrawide: string;
+  categorySuperwide: string;
+  distanceGuideTitle: string;
+  distanceGuideArrow: string;
+  distanceGuideTV: string;
+  distanceGuideSeat: string;
+  distanceGuideTip1: string;
+  distanceGuideTip2: string;
+  distanceGuideTip3: string;
+  tvProductsTitle: string;
+  monitorProductsTitle: string;
+  productViewDetails: string;
+  productBuyAt: string;
+  productsLastUpdated: string;
+  noProductsFilter: string;
+  affiliateDisclosure: string;
+}
+
+export type Translations = Record<Language, TranslationKeys>;
