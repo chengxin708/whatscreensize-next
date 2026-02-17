@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { Sora, IBM_Plex_Sans } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { LanguageProvider } from '@/components/providers/LanguageProvider';
-import { Navbar } from '@/components/layout/Navbar';
-import { BackgroundGradients } from '@/components/layout/BackgroundGradients';
+import { LayoutShell } from '@/components/layout/LayoutShell';
 import './globals.css';
 
 const sora = Sora({
@@ -49,13 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${sora.variable} ${ibmPlex.variable} font-body antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
-            <BackgroundGradients />
-            <div className="relative z-10 min-h-screen flex flex-col">
-              <Navbar />
-              <main className="flex-1 max-w-4xl mx-auto w-full px-4 pb-8">
-                {children}
-              </main>
-            </div>
+            <LayoutShell>{children}</LayoutShell>
           </LanguageProvider>
         </ThemeProvider>
       </body>
